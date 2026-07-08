@@ -1,80 +1,97 @@
-<!DOCTYPE html>
-<html lang="it">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prenotazioni Orientamento - Liceo Galilei</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .spinner { border-top-color: #1e40af; animation: spin 1s linear infinite; }
-    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between">
-
-  <script>
-    // Configura qui il tuo URL definitivo di Google Apps Script (lascia questo se è già quello aggiornato)
-    const URL_WEB_APP = "https://script.google.com/macros/s/AKfycbxoYiWcREIValgTFdkp9d6PJSlx3GFvsU4wOlP7vftkqKJB6gnf5BnOOTPu2PBanS5F/exec";
-  </script>
-
-  <div id="loading-overlay" class="fixed inset-0 bg-white bg-opacity-90 flex flex-col items-center justify-center z-50">
-    <div class="spinner ease-linear rounded-full border-4 border-t-4 border-slate-200 h-12 w-12 mb-4"></div>
-    <p class="text-slate-600 font-medium" id="loading-text">Caricamento sistema in corso...</p>
-  </div>
-
-  <div class="max-w-4xl w-full mx-auto p-4 md:p-8 flex-grow">
-    
-    <header class="text-center mb-8 border-b pb-6 border-slate-200 flex flex-col items-center">
-      <img src="data:image/jpeg;base64,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 Registry per l'Orientamento - Liceo Galilei" class="h-20 w-auto mb-3 object-contain">
-      <h1 class="text-2xl font-bold text-blue-900">Liceo Scientifico G. Galilei</h1>
-      <p class="text-slate-500 mt-1 font-medium">Sistema di Prenotazione Eventi di Orientamento 2026</p>
-    </header>
-
-    <main class="space-y-6">
-      <section class="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
-        <h2 class="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2">
-          <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-bold">1</span>
-          Verifica la tua Email
-        </h2>
-        <p class="text-sm text-slate-500 mb-4">Inserisci la tua email per verificare lo stato dei posti disponibili o per visualizzare e annullare le tue prenotazioni esistenti.</p>
-        <div class="flex flex-col sm:flex-row gap-3">
-          <input type="email" id="user-email" placeholder="esempio@email.com" class="flex-grow p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm">
-          <button onclick="caricaDatiAttuali()" class="bg-blue-800 hover:bg-blue-900 text-white font-medium px-5 py-2.5 rounded-lg text-sm transition shadow-sm">
-            Verifica / Aggiorna
-          </button>
-        </div>
-      </section>
-
-      <section id="sez-le-mie-prenotazioni" class="bg-amber-50 rounded-xl p-6 border border-amber-200 hidden">
-        <h3 class="font-bold text-amber-950 mb-3 flex items-center gap-2 text-md">
-          📌 Le tue prenotazioni attive con questa email:
-        </h3>
-        <div id="lista-mie-prenotazioni" class="space-y-3"></div>
-      </section>
-
-      <section id="sez-scelta-eventi" class="space-y-6 opacity-40 pointer-events-none transition-opacity duration-300">
-        
-        <div class="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
-          <h3 id="titolo-pa" class="font-bold text-blue-900 text-lg mb-2">Porte Aperte</h3>
-          <p class="text-xs text-slate-500 mb-4">Incontro generale con le famiglie della scuola secondaria di primo grado.</p>
-          <div id="opzioni-pa" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
-        </div>
-
-        <div class="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
-          <h3 id="titolo-sg" class="font-bold text-blue-900 text-lg mb-2">Un sabato al Galilei</h3>
-          <p class="text-xs text-slate-500 mb-4">Gli studenti di terza media assistono ad alcune lezioni con i ragazzi dell'istituto (Massimo 2 studenti per turno).</p>
-          <div id="opzioni-sg" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
-        </div>
-
-      </section>
-
-      <section id="sez-modulo-iscrizione" class="bg-white rounded-xl shadow-sm p-6 border border-slate-200 hidden">
-        <h3 class="text-md font-bold text-slate-800 mb-4" id="titolo-modulo-prenotazione">Modulo di Iscrizione</h3>
-        <form id="form-prenotazione" onsubmit="inviaPrenotazione(event)" class="space-y-4">
-          <input type="hidden" id="form-sheet-name">
-          <input type="hidden" id="form-opt-id">
-          
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-semibold text-slate-600 mb-1">Nome e Cognome Genitore *</label>
-              <input type="text" id
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="it"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;Prenotazioni Orientamento - Liceo Galilei&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.spinner { border-top-color: #1e40af; animation: spin 1s linear infinite; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Configura qui il tuo URL definitivo di Google Apps Script (lascia questo se è già quello aggiornato)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const URL_WEB_APP = "https://script.google.com/macros/s/AKfycbxoYiWcREIValgTFdkp9d6PJSlx3GFvsU4wOlP7vftkqKJB6gnf5BnOOTPu2PBanS5F/exec";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="loading-overlay" class="fixed inset-0 bg-white bg-opacity-90 flex flex-col items-center justify-center z-50"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="spinner ease-linear rounded-full border-4 border-t-4 border-slate-200 h-12 w-12 mb-4"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p class="text-slate-600 font-medium" id="loading-text"&gt;Caricamento sistema in corso...&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="max-w-4xl w-full mx-auto p-4 md:p-8 flex-grow"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;header class="text-center mb-8 border-b pb-6 border-slate-200 flex flex-col items-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;img src="data:image/jpeg;base64,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 Registry per l'Orientamento - Liceo Galilei" class="h-20 w-auto mb-3 object-contain"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;h1 class="text-2xl font-bold text-blue-900"&gt;Liceo Scientifico G. Galilei&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="text-slate-500 mt-1 font-medium"&gt;Sistema di Prenotazione Eventi di Orientamento 2026&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;main class="space-y-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;section class="bg-white rounded-xl shadow-sm p-6 border border-slate-200"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h2 class="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-bold"&gt;1&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>Verifica la tua Email</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p class="text-sm text-slate-500 mb-4"&gt;Inserisci la tua email per verificare lo stato dei posti disponibili o per visualizzare e annullare le tue prenotazioni esistenti.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="flex flex-col sm:flex-row gap-3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;input type="email" id="user-email" placeholder="esempio@email.com" class="flex-grow p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;button onclick="caricaDatiAttuali()" class="bg-blue-800 hover:bg-blue-900 text-white font-medium px-5 py-2.5 rounded-lg text-sm transition shadow-sm"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Verifica / Aggiorna</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;section id="sez-le-mie-prenotazioni" class="bg-amber-50 rounded-xl p-6 border border-amber-200 hidden"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h3 class="font-bold text-amber-950 mb-3 flex items-center gap-2 text-md"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>📌 Le tue prenotazioni attive con questa email:</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="lista-mie-prenotazioni" class="space-y-3"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;section id="sez-scelta-eventi" class="space-y-6 opacity-40 pointer-events-none transition-opacity duration-300"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="bg-white rounded-xl shadow-sm p-6 border border-slate-200"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h3 id="titolo-pa" class="font-bold text-blue-900 text-lg mb-2"&gt;Porte Aperte&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="text-xs text-slate-500 mb-4"&gt;Incontro generale con le famiglie della scuola secondaria di primo grado.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div id="opzioni-pa" class="grid grid-cols-1 md:grid-cols-2 gap-4"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="bg-white rounded-xl shadow-sm p-6 border border-slate-200"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h3 id="titolo-sg" class="font-bold text-blue-900 text-lg mb-2"&gt;Un sabato al Galilei&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="text-xs text-slate-500 mb-4"&gt;Gli studenti di terza media assistono ad alcune lezioni con i ragazzi dell'istituto (Massimo 2 studenti per turno).&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div id="opzioni-sg" class="grid grid-cols-1 md:grid-cols-2 gap-4"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;section id="sez-modulo-iscrizione" class="bg-white rounded-xl shadow-sm p-6 border border-slate-200 hidden"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h3 class="text-md font-bold text-slate-800 mb-4" id="titolo-modulo-prenotazione"&gt;Modulo di Iscrizione&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;form id="form-prenotazione" onsubmit="inviaPrenotazione(event)" class="space-y-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;input type="hidden" id="form-sheet-name"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;input type="hidden" id="form-opt-id"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="grid grid-cols-1 sm:grid-cols-2 gap-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;label class="block text-xs font-semibold text-slate-600 mb-1"&gt;Nome e Cognome Genitore *&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;input type="text" id</span></p>
+</body>
+</html>
